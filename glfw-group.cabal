@@ -25,6 +25,13 @@ source-repository head
 
 library
   exposed-modules:
+      Graphics.UI.GlfwG
+      Graphics.UI.GlfwG.Gamepad
+      Graphics.UI.GlfwG.Joystick
+      Graphics.UI.GlfwG.Key
+      Graphics.UI.GlfwG.Mouse
+      Graphics.UI.GlfwG.Window
+      Graphics.UI.GlfwG.Window.Type
       Lib
   other-modules:
       Paths_glfw_group
@@ -34,7 +41,11 @@ library
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
-      base >=4.7 && <5
+      GLFW-b
+    , base >=4.7 && <5
+    , containers
+    , stm
+    , text
   default-language: Haskell2010
 
 executable glfw-group-exe
@@ -47,8 +58,12 @@ executable glfw-group-exe
       app
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      GLFW-b
+    , base >=4.7 && <5
+    , containers
     , glfw-group
+    , stm
+    , text
   default-language: Haskell2010
 
 test-suite glfw-group-test
@@ -62,6 +77,10 @@ test-suite glfw-group-test
       test
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      GLFW-b
+    , base >=4.7 && <5
+    , containers
     , glfw-group
+    , stm
+    , text
   default-language: Haskell2010
