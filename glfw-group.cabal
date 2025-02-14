@@ -6,7 +6,9 @@ cabal-version: 2.2
 
 name:           glfw-group
 version:        0.1.0.0
+synopsis:       GLFW package with window groups destroyed together
 description:    Please see the README on GitHub at <https://github.com/YoshikuniJujo/glfw-group#readme>
+category:       Graphics
 homepage:       https://github.com/YoshikuniJujo/glfw-group#readme
 bug-reports:    https://github.com/YoshikuniJujo/glfw-group/issues
 author:         Yoshikuni Jujo
@@ -15,7 +17,7 @@ copyright:      (c) 2025 Yoshikuni Jujo
 license:        BSD-3-Clause
 license-file:   LICENSE
 build-type:     Simple
-extra-source-files:
+extra-doc-files:
     README.md
     CHANGELOG.md
 
@@ -41,11 +43,11 @@ library
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
-      GLFW-b
+      GLFW-b <4
     , base >=4.7 && <5
-    , containers
-    , stm
-    , text
+    , containers <1
+    , stm <3
+    , text <3
   default-language: Haskell2010
 
 executable glfw-group-exe
@@ -58,12 +60,12 @@ executable glfw-group-exe
       app
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      GLFW-b
+      GLFW-b <4
     , base >=4.7 && <5
-    , containers
+    , containers <1
     , glfw-group
-    , stm
-    , text
+    , stm <3
+    , text <3
   default-language: Haskell2010
 
 test-suite glfw-group-test
@@ -77,10 +79,10 @@ test-suite glfw-group-test
       test
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      GLFW-b
+      GLFW-b <4
     , base >=4.7 && <5
-    , containers
+    , containers <1
     , glfw-group
-    , stm
-    , text
+    , stm <3
+    , text <3
   default-language: Haskell2010
