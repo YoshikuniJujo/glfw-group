@@ -5,7 +5,7 @@ cabal-version: 2.2
 -- see: https://github.com/sol/hpack
 
 name:           glfw-group
-version:        0.1.0.0
+version:        0.1.0.1
 synopsis:       GLFW package with window groups destroyed together
 description:    Please see the README on GitHub at <https://github.com/YoshikuniJujo/glfw-group#readme>
 category:       Graphics
@@ -46,24 +46,6 @@ library
       GLFW-b <4
     , base >=4.7 && <5
     , containers <1
-    , stm <3
-    , text <3
-  default-language: Haskell2010
-
-executable glfw-group-exe
-  main-is: Main.hs
-  other-modules:
-      Paths_glfw_group
-  autogen-modules:
-      Paths_glfw_group
-  hs-source-dirs:
-      app
-  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
-  build-depends:
-      GLFW-b <4
-    , base >=4.7 && <5
-    , containers <1
-    , glfw-group
     , stm <3
     , text <3
   default-language: Haskell2010
