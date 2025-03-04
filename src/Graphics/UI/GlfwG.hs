@@ -7,11 +7,17 @@
 
 module Graphics.UI.GlfwG (
 
-	init, setErrorCallback, ErrorCallback, ErrorMessage,
+	-- * INIT AND ERROR
+
+	init, setErrorCallback, ErrorCallback, GlfwB.Error, ErrorMessage,
+
+	-- * EVENT
+
+	GlfwB.pollEvents, GlfwB.waitEvents,
+
+	-- * VULKAN
 
 	GlfwB.vulkanSupported, getRequiredInstanceExtensions,
-
-	GlfwB.pollEvents, GlfwB.waitEvents
 
 	) where
 
