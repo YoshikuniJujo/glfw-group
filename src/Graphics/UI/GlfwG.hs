@@ -7,7 +7,7 @@
 
 module Graphics.UI.GlfwG (
 
-	init, setErrorCallback, ErrorMessage,
+	init, setErrorCallback, ErrorCallback, ErrorMessage,
 
 	GlfwB.vulkanSupported, getRequiredInstanceExtensions,
 
