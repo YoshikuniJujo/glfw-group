@@ -7,7 +7,9 @@
 
 module Graphics.UI.GlfwG (
 
-	init, ErrorMessage, getRequiredInstanceExtensions,
+	init, setErrorCallback, ErrorMessage,
+
+	GlfwB.vulkanSupported, getRequiredInstanceExtensions,
 
 	GlfwB.pollEvents, GlfwB.waitEvents
 
@@ -30,6 +32,11 @@ init hdl cmp = GlfwB.init >>= bool
 	(hdl $ "Gpu.Vulkan.Khr.Surface.Glfw: " ++
 		"GLFW-b.Graphics.UI.GLFW.init return False")
 	(finally cmp GlfwB.terminate)
+
+setErrorCallback :: Maybe ErrorCallback -> IO ()
+setErrorCallback = GlfwB.setErrorCallback
+
+type ErrorCallback = GlfwB.Error -> ErrorMessage -> IO ()
 
 type ErrorMessage = String
 
