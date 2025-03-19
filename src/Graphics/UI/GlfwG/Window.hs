@@ -30,7 +30,11 @@ module Graphics.UI.GlfwG.Window (
 
 	-- * STATE
 
-	getKey
+	getKey,
+
+	-- * ATTRIBUTES
+	
+	getIconified
 
 	) where
 
@@ -130,3 +134,6 @@ setShouldClose (W w) = B.setWindowShouldClose w
 
 getKey :: W sw -> B.Key -> IO B.KeyState
 getKey (W w) = B.getKey w
+
+getIconified :: W sw -> IO Bool
+getIconified (W w) = B.getWindowIconified w
